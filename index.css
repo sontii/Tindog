@@ -1,0 +1,89 @@
+body {
+    margin: 0 auto;
+    max-width: 550px;
+    background-color: rgb(31, 31, 31);
+}
+
+.wrapper{
+    background: linear-gradient(180deg, #FFFFFF 0%, #F6F7FB 100%);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+.header-icon {
+    max-height: 32px;
+    margin: 1.5rem 1rem;
+}
+
+.header-logo{
+    max-height: 42px;
+}
+
+main{
+    text-align: center;
+    position: relative;
+}
+
+.main-img{
+    max-width: 98%;
+    border-radius: 15px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    left: 1rem;
+    margin: 0;
+}
+
+.main-name{
+    font-weight: 600;
+    font-size: 2em;
+    color: #F8F8F8;
+    bottom: 3rem;
+}
+
+.main-bio{
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #B7B7B7;
+    bottom: 0.8rem;
+}
+
+.badge{
+    position: absolute;
+    left: 1.2rem;
+    top: 3.3rem;
+    width: 40%;
+    transform: rotate(-30deg);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    height: 5rem;
+    width: 5rem;
+    margin: 1.5rem 1rem;
+    border: none;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-cross{
+    background-image: url("/images/icon-cross.png");
+}
+
+.btn-heart{
+    background-image: url("/images/icon-heart.png");
+}
