@@ -1,4 +1,3 @@
-
 class Dog {
 	constructor(data) {
 		Object.assign(this, data);
@@ -13,13 +12,48 @@ class Dog {
             <div>
         `;
 	}
-	setBadge() {
-        if (this.hasBeenLiked) {
-            return `<img class="badge" id="badge-like" src="/images/badge-like.png" alt="like">`
-        } else {
-            return `<img class="badge" id="badge-nope" src="/images/badge-nope.png" alt="nope">`
-        }		
+	setBadgeHtml() {
+        if(this.hasBeenSwiped){
+            return `<img 
+                    class="badge"
+                    id="badge-like"
+                    src="/images/badge-${this.hasBeenLiked ? "like" : "nope"}.png"
+                    alt="dog layer"
+                    >`
+        }
 	}
+
+    setSwipe() {
+        this.hasBeenSwiped = true;
+    }
+
+    setLike(isLiked) {
+        this.hasBeenLiked = isLiked
+    }
+
+    setLikeBtnHtml(){
+        if(this.hasBeenSwiped){
+            return `<button 
+                        id="btn-cross"
+                        class="btn btn-cross ${this.hasBeenLiked ? "" : "cross"}">
+                    </button>
+                    <button
+                        id="btn-heart"
+                        class="btn btn-heart ${this.hasBeenLiked ? "heart" : ""}">
+                    </button>`
+        } else {
+            return `<button 
+                        id="btn-cross"
+                        class="btn btn-cross">
+                    </button>
+                    <button
+                        id="btn-heart"
+                        class="btn btn-heart">
+                    </button>`
+        }
+
+        
+    }
 
 }
 
