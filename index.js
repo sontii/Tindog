@@ -3,17 +3,58 @@ import Dog from "./Dog.js";
 
 let isWaiting = false;
 
+const badgeWrapper = document.getElementById("badge-wrapper");
+const btnHeart = document.getElementById("btn-heart")
+const btnCross = document.getElementById("btn-cross")
+
 document.body.addEventListener('click', (e)=> {
-    let badge = ''
     if (e.target.id === "btn-heart") {
-        dog.hasBeenLiked = true
+        chooseDog(true)
     } else if (e.target.id === "btn-cross") {
-        console.log('ok')
+        chooseDog(false)
     }
-    
-    badge = dog.setBadge()
-    document.getElementById("badge-wrapper").innerHTML = badge
 })
+
+console.log(btnCross, btnHeart)
+
+function chooseDog(liked){
+    if(liked){
+        dog.hasBeenLiked = true;
+        btnHeart.classList.add = "heart";
+		btnCross.classList.remove = "cross";
+    } else {
+        dog.hasBeenLiked = false
+        btnHeart.classList.remove = "heart";
+		btnCross.classList.add = "cross";
+    }
+    if(!isWaiting){
+        dog.hasBeenSwiped = true
+        badgeWrapper.innerHTML = dog.setBadge();
+        isWaiting = true;
+            
+        setTimeout(() => {
+            dog = getNewDog();
+            if (dog.hasBeenSwiped){
+                badgeWrapper.innerHTML = dog.setBadge();
+                if(dog.hasBeenLiked){
+                    btnHeart.classList.add = 'heart'
+                    btnCross.classList.remove = 'cross'
+                } else {
+                    btnHeart.classList.remove = "heart";
+					btnCross.classList.add = "cross";
+                } 
+                
+            } else {
+                badgeWrapper.innerHTML = "";
+                btnHeart.classList.remove = "heart";
+				btnCross.classList.remove = "cross";
+            }
+							
+            render();
+            isWaiting = false;
+        }, 2000);       
+    }
+}
 
 function getNewDog() {
 	const nextDogData = dogs.shift()
@@ -23,7 +64,6 @@ function getNewDog() {
 function render() {
 	document.getElementById("dog-wrapper").innerHTML = dog.getDogHtml();
 }
-
 
 let dog = getNewDog();
 render();
