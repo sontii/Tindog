@@ -29,15 +29,22 @@ main{
     position: relative;
 }
 
+.dog-card {
+    text-align: left;
+    position: absolute;
+    left: 1rem;
+    bottom: 3rem;
+}
+
 .main-img{
     max-width: 98%;
     border-radius: 15px;
 }
 
-p {
+
+.main-name,
+.main-bio {
     font-family: 'Poppins', sans-serif;
-    position: absolute;
-    left: 1rem;
     margin: 0;
 }
 
@@ -45,14 +52,13 @@ p {
     font-weight: 600;
     font-size: 2em;
     color: #F8F8F8;
-    bottom: 3rem;
+    margin-bottom: 0.5rem;
 }
 
 .main-bio{
     font-weight: 400;
     font-size: 1.5em;
     color: #B7B7B7;
-    bottom: 0.8rem;
 }
 
 .badge{
@@ -61,6 +67,10 @@ p {
     top: 3.3rem;
     width: 40%;
     transform: rotate(-30deg);
+}
+
+.end-msg {
+    font-size: 5em;
 }
 
 footer{
@@ -86,4 +96,12 @@ footer{
 
 .btn-heart{
     background-image: url("/images/icon-heart.png");
+}
+
+.heart {
+ background-color: #DBFFF4;
+}
+
+.cross{
+    background-color: #FFE7EF;
 }
