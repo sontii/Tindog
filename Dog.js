@@ -20,6 +20,8 @@ class Dog {
                     src="./images/badge-${this.hasBeenLiked ? "like" : "nope"}.png"
                     alt="dog layer"
                     >`
+        } else {
+            return ''
         }
 	}
 
