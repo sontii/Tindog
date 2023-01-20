@@ -17,7 +17,7 @@ class Dog {
             return `<img 
                     class="badge"
                     id="badge-like"
-                    src="/images/badge-${this.hasBeenLiked ? "like" : "nope"}.png"
+                    src="./images/badge-${this.hasBeenLiked ? "like" : "nope"}.png"
                     alt="dog layer"
                     >`
         }
