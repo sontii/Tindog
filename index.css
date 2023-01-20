@@ -91,11 +91,11 @@ footer{
 }
 
 .btn-cross{
-    background-image: url("/images/icon-cross.png");
+    background-image: url("./images/icon-cross.png");
 }
 
 .btn-heart{
-    background-image: url("/images/icon-heart.png");
+    background-image: url("./images/icon-heart.png");
 }
 
 .heart {
